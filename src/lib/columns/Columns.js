@@ -31,7 +31,7 @@ class Columns extends Component {
       nextProps.timeSteps === this.props.timeSteps &&
       nextProps.height === this.props.height &&
       nextProps.verticalLineClassNamesForTime ===
-        this.props.verticalLineClassNamesForTime
+      this.props.verticalLineClassNamesForTime
     )
   }
 
@@ -98,18 +98,35 @@ class Columns extends Component {
   }
 }
 
-const ColumnsWrapper = ({ ...props }) => {
+const ColumnsWrapper = ({
+  canvasTimeStart = passThroughPropTypes.canvasTimeStart,
+  canvasTimeEnd = passThroughPropTypes.canvasTimeEnd,
+  canvasWidth = passThroughPropTypes.canvasWidth,
+  lineCount = passThroughPropTypes.lineCount,
+  minUnit = passThroughPropTypes.minUnit,
+  timeSteps = passThroughPropTypes.timeSteps,
+  height = passThroughPropTypes.height,
+  verticalLineClassNamesForTime = passThroughPropTypes.verticalLineClassNamesForTime,
+  ...props
+}) => {
   return (
     <TimelineStateConsumer>
       {({ getLeftOffsetFromDate }) => (
-        <Columns getLeftOffsetFromDate={getLeftOffsetFromDate} {...props} />
+        <Columns
+          getLeftOffsetFromDate={getLeftOffsetFromDate}
+          canvasTimeStart={canvasTimeStart}
+          canvasTimeEnd={canvasTimeEnd}
+          canvasWidth={canvasWidth}
+          lineCount={lineCount}
+          minUnit={minUnit}
+          timeSteps={timeSteps}
+          height={height}
+          verticalLineClassNamesForTime={verticalLineClassNamesForTime}
+          {...props}
+        />
       )}
     </TimelineStateConsumer>
   )
-}
-
-ColumnsWrapper.defaultProps = {
-  ...passThroughPropTypes
 }
 
 export default ColumnsWrapper

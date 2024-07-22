@@ -3,7 +3,7 @@ import './styles.scss'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import { HashRouter as Router, Route, Link, withRouter } from 'react-router-dom'
+import { HashRouter as Router, Route, Link, useParams } from 'react-router-dom'
 
 const demos = {
   main: require('./demo-main').default,
@@ -54,6 +54,18 @@ class Menu extends Component {
   }
 }
 
+const withRouter = WrappedComponent => props => {
+  const params = useParams();
+  // ...other hooks
+
+  return (
+    <WrappedComponent
+      {...props}
+      {...{ params, /* other hook props */ }}
+    />
+  );
+};
+
 const MenuWithRouter = withRouter(Menu)
 
 class App extends Component {
@@ -61,7 +73,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <MenuWithRouter />
+          {/* <MenuWithRouter /> */}
           <div className="demo-demo">
             <Route path="/" exact component={demos[Object.keys(demos)[0]]} />
             {Object.keys(demos).map(key => (

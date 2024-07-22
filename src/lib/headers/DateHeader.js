@@ -94,7 +94,7 @@ class DateHeader extends React.Component {
 
 const DateHeaderWrapper = ({
   unit,
-  labelFormat,
+  labelFormat = formatLabel,
   style,
   className,
   intervalRenderer,
@@ -132,10 +132,6 @@ DateHeaderWrapper.propTypes = {
   intervalRenderer: PropTypes.func,
   headerData: PropTypes.object,
   height: PropTypes.number
-}
-
-DateHeaderWrapper.defaultProps = {
-  labelFormat: formatLabel
 }
 
 function formatLabel(

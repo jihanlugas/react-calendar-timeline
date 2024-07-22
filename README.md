@@ -23,10 +23,10 @@ Checkout the [examples here](https://github.com/namespace-ee/react-calendar-time
 
 ```bash
 # via yarn
-yarn add react-calendar-timeline
+yarn add @jihanlugas@react-calendar-timeline
 
 # via npm
-npm install --save react-calendar-timeline
+npm install --save @jihanlugas@react-calendar-timeline
 ```
 
 `react-calendar-timeline` has [react](https://reactjs.org/), [react-dom](https://reactjs.org/docs/react-dom.html), [`moment`](http://momentjs.com/) and [`interactjs`](http://interactjs.io/docs/) as peer dependencies.
@@ -36,9 +36,9 @@ npm install --save react-calendar-timeline
 At the very minimum:
 
 ```jsx
-import Timeline from 'react-calendar-timeline'
+import Timeline from '@jihanlugas/react-calendar-timeline'
 // make sure you include the timeline stylesheet or the timeline will not be styled
-import 'react-calendar-timeline/lib/Timeline.css'
+import '@jihanlugas/react-calendar-timeline/lib/Timeline.css'
 import moment from 'moment'
 
 const groups = [{ id: 1, title: 'group 1' }, { id: 2, title: 'group 2' }]
@@ -552,7 +552,7 @@ The component automatically detects when the window has been resized. Optionally
 To do this, pass a `resizeDetector`. Since bundling it by default would add ~18kb of minimized JS, you need to opt in to this like so:
 
 ```jsx
-import containerResizeDetector from 'react-calendar-timeline/lib/resize-detector/container'
+import containerResizeDetector from '@jihanlugas/react-calendar-timeline/lib/resize-detector/container'
 
 <Timeline resizeDetector={containerResizeDetector} ... />
 ```
@@ -603,7 +603,7 @@ import Timeline, {
   CustomMarker,
   TodayMarker,
   CursorMarker
-} from 'react-calendar-timeline'
+} from '@jihanlugas/react-calendar-timeline'
 
 <Timeline>
   <TimelineMarkers>
@@ -744,7 +744,7 @@ import Timeline, {
   TimelineHeaders,
   SidebarHeader,
   DateHeader
-} from 'react-calendar-timeline'
+} from '@jihanlugas/react-calendar-timeline'
 
 <Timeline>
   <TimelineHeaders>
@@ -816,7 +816,7 @@ import Timeline, {
   TimelineHeaders,
   SidebarHeader,
   DateHeader
-} from 'react-calendar-timeline'
+} from '@jihanlugas/react-calendar-timeline'
 
 <Timeline>
   <TimelineHeaders>
@@ -988,7 +988,7 @@ import Timeline, {
   TimelineHeaders,
   SidebarHeader,
   DateHeader
-} from 'react-calendar-timeline'
+} from '@jihanlugas/react-calendar-timeline'
 
 <Timeline>
   <TimelineHeaders>
@@ -1122,7 +1122,7 @@ import Timeline, {
   TimelineHeaders,
   SidebarHeader,
   DateHeader
-} from 'react-calendar-timeline'
+} from '@jihanlugas/react-calendar-timeline'
 
 <Timeline>
   <TimelineHeaders>
@@ -1225,8 +1225,8 @@ See [issue 51](https://github.com/namespace-ee/react-calendar-timeline/issues/51
 Alternatively you may import the transpiled version of the timeline like this:
 
 ```js
-// import Timeline from 'react-calendar-timeline'  // ESnext version
-import Timeline from 'react-calendar-timeline/lib' // ES5 version
+// import Timeline from '@jihanlugas/react-calendar-timeline'  // ESnext version
+import Timeline from '@jihanlugas/react-calendar-timeline/lib' // ES5 version
 ```
 
 However doing so you lose on some of the features of webpack 2 and will potentially get a slightly larger bundle.
